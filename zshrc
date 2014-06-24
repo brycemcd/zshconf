@@ -5,7 +5,7 @@ setopt SHARE_HISTORY
 # load private vars
 source "${HOME}/.zshconf/private/private.zsh"
 # First, install the theme in .zshconf/themes, then source it here
-# TODO: reference theme
+source "themes/brycemcd.zsh-theme"
 
 ###
 # Alias
@@ -35,12 +35,5 @@ source ~/.rvm/scripts/rvm
 # to get a decent set of colors:
 export TERM=xterm-256color
 export EDITOR=vim
-
-
-local branch='branch: %F{cyan}$(current_branch)%f'
-local last_commit_date='last commit: %F{red}$(git log -1 --format=%cr)%f'
-
-export PS1="%F{yellow}%h%f-%n@%m:%~/ %F{cyan}=>%f "
-export RPS1="${branch} - ${last_commit_date}"
 
 set -o vi
