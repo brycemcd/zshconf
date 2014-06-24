@@ -1,3 +1,11 @@
 private/*.zsh
 private/*.conf
 private/*.rc
+
+themes/*.zsh
+themes/*.conf
+themes/*.rc
+
+plugins/*.zsh
+plugins/*.conf
+plugins/*.rc
