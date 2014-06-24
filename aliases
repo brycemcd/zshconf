@@ -1,0 +1,4 @@
+# example aliases
+# alias zshconfig="mate ~/.zshrc"
+alias shipit="git push origin master && git push heroku master"
+alias so="source ~/.zshrc"

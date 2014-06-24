@@ -1,0 +1,41 @@
+# This is an exmaple zshrc file. Move this to zshrc (no dot) in your ~/.zshconf
+# directory. Create ~/.zshrc and source this file so it's read at startup
+
+# First, install the theme in .zshconf/themes, then source it here
+# Install a theme by git cloning it to the .zshconf/themes directory and then
+# sourcing that file here. Themes can be kept up to date using git submodules
+ZSH_THEME="miloshadzic"
+
+###
+# Alias
+###
+source 'aliases'
+
+
+###
+# 
+###
+source plugins
+
+##
+# custom conf
+##
+
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+# disable bloody auto-correct
+setopt NO_CORRECT_ALL
+setopt PROMPTSUBST
+
+export PATH=${HOME}/.rvm/gems/ruby-1.9.3-p194/bin:${HOME}/.rvm/gems/ruby-1.9.3-p194@global/bin:${HOME}/.rvm/rubies/ruby-1.9.3-p194/bin:${HOME}/.rvm/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:${HOME}/.rvm/bin
+
+# to get a decent set of colors:
+export TERM=xterm-256color
+export EDITOR=vim
+
+
+export PS1="%F{yellow}%h%f-%n@%m:%~/ %F{blue}=>%f "
+export RPS1="branch: %F{cyan}$(current_branch)%f - last commit: %F{red}$(git log -1 --format='%cr')%f"
+
+set -o vi
