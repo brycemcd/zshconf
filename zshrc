@@ -5,17 +5,19 @@ setopt SHARE_HISTORY
 # load private vars
 source "${HOME}/.zshconf/private/private.zsh"
 # First, install the theme in .zshconf/themes, then source it here
-source "themes/brycemcd.zsh-theme"
+source "${HOME}/.zshconf/themes/brycemcd.zsh-theme"
 
 ###
 # Alias
 ###
 source "${HOME}/.zshconf/aliases"
 
-
 ###
 # source plugins
 ###
+for file in ${HOME}/.zshconf/plugins/*.zsh; do
+  source "$file"
+done
 
 ##
 # custom conf
