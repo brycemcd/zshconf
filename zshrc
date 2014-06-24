@@ -2,8 +2,10 @@ setopt EXTENDED_HISTORY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
+# load private vars
+source "${HOME}/.zshconf/private/private.zsh"
 # First, install the theme in .zshconf/themes, then source it here
-ZSH_THEME="miloshadzic"
+# TODO: reference theme
 
 ###
 # Alias
