@@ -15,9 +15,11 @@ source "${HOME}/.zshconf/aliases"
 ###
 # source plugins
 ###
-for file in ${HOME}/.zshconf/plugins/*.zsh; do
-  source "$file"
-done
+if [[ -e ${HOME}/.zshconf/plugins/*.zsh ]]; then
+  for file in ${HOME}/.zshconf/plugins/*.zsh; do
+    source "$file"
+  done
+fi
 
 ##
 # custom conf
