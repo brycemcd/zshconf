@@ -10,3 +10,4 @@ alias -g NUL="> /dev/null 2>&1"
 
 hash -d cweb=$HOME/Cricket/web
 hash -d cblog=$HOME/Cricket/blog_theme
+hash -d sites=$HOME/Sites
