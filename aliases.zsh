@@ -10,6 +10,9 @@ alias zc="zcalc"
 ## RAILS STUFF
 alias rs="rails server"
 
+#Stupid simple webserver in python
+alias -g webs="python -m SimpleHTTPServer 8000"
+
 alias -g G="| grep "
 alias -g NUL="> /dev/null 2>&1"
 
