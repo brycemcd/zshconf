@@ -18,5 +18,5 @@ else
   export RPS1="%W @ %T"
 fi
 
-export PS1="%F{yellow}%h%f-%n@%m:%~/ %F{cyan}=>%f "
+export PS1="%F{yellow}%h%f-%n@%F{white}%m%f:%~/ %F{cyan}=>%f "
 
