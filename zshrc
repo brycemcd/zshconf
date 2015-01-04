@@ -33,6 +33,9 @@ export PATH=${HOME}/.rvm/gems/ruby-1.9.3-p194/bin:${HOME}/.rvm/gems/ruby-1.9.3-p
 # to get a decent set of colors:
 export TERM=xterm-256color
 export EDITOR=vim
+export HISTFILE=/home/brycemcd/.bryceszshhistory
+export HISTSIZE=1000
+export SAVEHIST=3000
 
 source ~/.rvm/scripts/rvm
 
