@@ -31,6 +31,9 @@ source "${HOME}/.zshconf/options.zsh"
 # to get a decent set of colors:
 export TERM=xterm-256color
 export EDITOR=vim
+export HISTFILE=/home/brycemcd/.bryceszshhistory
+export HISTSIZE=1000
+export SAVEHIST=3000
 
 set -o vi
 
