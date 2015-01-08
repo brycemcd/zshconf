@@ -28,12 +28,11 @@ fi
 ##
 source "${HOME}/.zshconf/options.zsh"
 
-export PATH=${HOME}/.rvm/gems/ruby-1.9.3-p194/bin:${HOME}/.rvm/gems/ruby-1.9.3-p194@global/bin:${HOME}/.rvm/rubies/ruby-1.9.3-p194/bin:${HOME}/.rvm/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:${HOME}/.rvm/bin
-
 # to get a decent set of colors:
 export TERM=xterm-256color
 export EDITOR=vim
 
-source ~/.rvm/scripts/rvm
-
 set -o vi
+
+source ~/.rvm/scripts/rvm
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
