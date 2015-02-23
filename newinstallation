@@ -28,7 +28,8 @@ silversearcher-ag \
 tmux \
 watch \
 zlib1g-dev \
-zsh
+zsh \
+libffi-dev
 
 echo "install the vim I like"
 #curl -Lo- https://bit.ly/janus-bootstrap | bash
