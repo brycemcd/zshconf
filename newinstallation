@@ -15,6 +15,7 @@ libcurl4-openssl-dev \
 libksba-dev \
 libksba8 \
 libncurses5-dev \
+libpq-dev \
 libqtwebkit-dev \
 libreadline-dev \
 libreadline6-dev \
@@ -26,13 +27,14 @@ openssl \
 rbenv \
 silversearcher-ag \
 tmux \
+vim \
 watch \
 zlib1g-dev \
 zsh \
 libffi-dev
 
 echo "install the vim I like"
-#curl -Lo- https://bit.ly/janus-bootstrap | bash
+curl -Lo- https://bit.ly/janus-bootstrap | bash
 
 echo "setting up bundler / rbenv"
 ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
@@ -70,3 +72,11 @@ number_of_cores=$(nproc)
 bundle config --global jobs $((number_of_cores - 1))
 
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+
+echo "get yur tmuxfiles"
+wget -O ~/.tmux.conf https://gist.githubusercontent.com/brycemcd/c43f5a3250256cd65686/raw/.tmux.conf
+
+echo "get yur vimfiles"
+wget -O ~/.vimrc.after https://gist.githubusercontent.com/brycemcd/c43f5a3250256cd65686/raw/.vimrc.after
+wget -O ~/.vimrc.before https://gist.githubusercontent.com/brycemcd/c43f5a3250256cd65686/raw/.vimrc.before
