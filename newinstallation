@@ -80,3 +80,6 @@ wget -O ~/.tmux.conf https://gist.githubusercontent.com/brycemcd/c43f5a3250256cd
 echo "get yur vimfiles"
 wget -O ~/.vimrc.after https://gist.githubusercontent.com/brycemcd/c43f5a3250256cd65686/raw/.vimrc.after
 wget -O ~/.vimrc.before https://gist.githubusercontent.com/brycemcd/c43f5a3250256cd65686/raw/.vimrc.before
+
+echo "zsh plugins"
+mkdir ~/.zshconf/plugins && wget -O ~/.zshconf/plugins/git.plugin.zsh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/plugins/git/git.plugin.zsh 
