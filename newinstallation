@@ -1,0 +1,85 @@
+#!/bin/bash
+
+# Thoughtbot discontinued linux support :(
+# Using https://github.com/thoughtbot/laptop/blob/39768b19959f74724ed0c0ea92e5b2f6f78e45c1/linux
+# as reference to setup a new box
+
+sudo apt-get install -y \
+autoconf \
+bison \
+build-essential \
+curl \
+docker \
+imagemagick \
+libcurl4-openssl-dev \
+libksba-dev \
+libksba8 \
+libncurses5-dev \
+libpq-dev \
+libqtwebkit-dev \
+libreadline-dev \
+libreadline6-dev \
+libssl-dev \
+libxslt1-dev \
+libyaml-dev \
+nodejs \
+openssl \
+rbenv \
+silversearcher-ag \
+tmux \
+vim \
+watch \
+zlib1g-dev \
+zsh \
+libffi-dev
+
+echo "install the vim I like"
+curl -Lo- https://bit.ly/janus-bootstrap | bash
+
+echo "setting up bundler / rbenv"
+ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
+
+if [[ ! -d "$HOME/.rbenv" ]]; then
+echo "Installing rbenv, to change Ruby versions ..."
+  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  append_to_zshrc 'export PATH="$HOME/.rbenv/bin:$PATH"'
+  append_to_zshrc 'eval "$(rbenv init - zsh --no-rehash)"' 1
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init - zsh)"
+fi
+
+if [[ ! -d "$HOME/.rbenv/plugins/rbenv-gem-rehash" ]]; then
+  echo "Installing rbenv-gem-rehash so the shell automatically picks up binaries after installing gems with binaries..."
+  git clone https://github.com/sstephenson/rbenv-gem-rehash.git \
+  ~/.rbenv/plugins/rbenv-gem-rehash
+fi
+
+if [[ ! -d "$HOME/.rbenv/plugins/ruby-build" ]]; then
+  echo "Installing ruby-build, to install Rubies ..."
+  git clone https://github.com/sstephenson/ruby-build.git \
+  ~/.rbenv/plugins/ruby-build
+fi
+echo "latest ruby version is ${ruby_version}"
+rbenv install "$ruby_version"
+rbenv global "$ruby_version"
+rbenv rehash
+
+gem update --system
+
+gem install bundler --no-document --pre
+
+number_of_cores=$(nproc)
+bundle config --global jobs $((number_of_cores - 1))
+
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+
+echo "get yur tmuxfiles"
+wget -O ~/.tmux.conf https://gist.githubusercontent.com/brycemcd/c43f5a3250256cd65686/raw/.tmux.conf
+
+echo "get yur vimfiles"
+wget -O ~/.vimrc.after https://gist.githubusercontent.com/brycemcd/c43f5a3250256cd65686/raw/.vimrc.after
+wget -O ~/.vimrc.before https://gist.githubusercontent.com/brycemcd/c43f5a3250256cd65686/raw/.vimrc.before
+
+echo "zsh plugins"
+mkdir ~/.zshconf/plugins && wget -O ~/.zshconf/plugins/git.plugin.zsh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/plugins/git/git.plugin.zsh 

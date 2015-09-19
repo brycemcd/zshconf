@@ -8,7 +8,7 @@ function getlog() {
 
 #TODO: figure out how to tell if a function exists
 
-source "${HOME}/.oh-my-zsh/plugins/git/git.plugin.zsh"
+source "/home/brycemcd/.zshconf/plugins/git.plugin.zsh"
 if $git_plugin_installed; then
   local branch='branch: %F{cyan}$(current_branch)%f'
   local last_commit_date='last commit: %F{red}$(getlog)%f'
