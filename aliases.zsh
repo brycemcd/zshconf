@@ -21,9 +21,18 @@ alias rs="rails server"
 alias -g webs="python -m SimpleHTTPServer 8000"
 
 alias -g G="| grep "
+alias -g L="| less "
 alias -g NUL="> /dev/null 2>&1"
 
 alias -g P='| jq -c ".hits.hits[] | {score: ._score, fname: ._source.first_name, lname: ._source.last_name}" | less'
+
+# some AWS stuff
+alias -g ebl="eb list"
+alias -g eblv="eb list --verbose"
+alias -g ecdi="aws ec2 describe-instances --instance-ids"
+
+# git stuff
+alias glpp="git log --date=relative --pretty=format:'%ad %ci %C(yellow)%h%Creset %C(cyan)%an%Creset %s'"
 
 hash -d cweb=$HOME/Cricket/web
 hash -d cblog=$HOME/Cricket/blog_theme
@@ -34,3 +43,7 @@ hash -d todo=$HOME/Sites/todo
 hash -d data=/media/brycemcd/filestore/third_party_data
 hash -d usbenc=/media/brycemcd/USB20FD/visible
 hash -d etl=$HOME/Cricket/cricket-etl
+
+# jupyter stuff
+alias -g jn="jupyter notebook --no-browser --ip 10.10.0.221"
+alias -g doscience="source activate typical_stack"
